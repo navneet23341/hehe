@@ -1,24 +1,27 @@
-const yesBtn = document.getElementById('yes-btn');
-const noBtn = document.getElementById('no-btn');
-const gifContainer = document.getElementById('gif-container');
-const kissGif = document.getElementById('kiss-gif');
-const thankYouMessage = document.getElementById('thank-you-message');
+document.getElementById('revealButton').addEventListener('click', function() {
+    const button = document.getElementById('revealButton');
+    const message = document.getElementById('message');
+    const sparklesContainer = document.getElementById('sparkles');
 
-let clickCount = 0;
-
-noBtn.addEventListener('click', (event) => {
-    event.stopPropagation(); // Prevent the click event from propagating to the "Yes" button
-    clickCount++;
-    yesBtn.style.transform = `scale(${1 + clickCount * 0.5})`;
+    button.classList.add('hidden');
+    message.classList.remove('hidden');
+    setTimeout(() => {
+        message.classList.add('visible');
+    }, 10);
+    createSparkles(sparklesContainer);
 });
 
-yesBtn.addEventListener('click', () => {
-    // Hide the buttons
-    yesBtn.style.display = 'none';
-    noBtn.style.display = 'none';
+function createSparkles(container) {
+    container.classList.remove('hidden');
+    for (let i = 0; i < 30; i++) {
+        const sparkle = document.createElement('div');
+        sparkle.classList.add('sparkle');
+        sparkle.style.top = `${Math.random() * 100}%`;
+        sparkle.style.left = `${Math.random() * 100}%`;
+        container.appendChild(sparkle);
 
-    // Display the "Thank You" message and GIF container
-    thankYouMessage.classList.add('visible');
-    gifContainer.classList.add('visible');
-});
-
+        setTimeout(() => {
+            sparkle.remove();
+        }, 1000);
+    }
+}
