@@ -46,10 +46,16 @@ button {
     display: none;
 }
 
-/* Center the "Thank You" message and GIF container */
+/* Center the "Thank You" message and image container */
 #thank-you-message.visible,
-#gif-container.visible {
+#image-container.visible {
     display: block;
     margin-top: 20px;
     font-size: 28px; /* Increased font size for the "Thank You" message */
+}
+
+#special-image {
+    max-width: 100%; /* Ensure the image is responsive */
+    height: auto;
+    border-radius: 10px; /* Optional: Add rounded corners to the image */
 }
