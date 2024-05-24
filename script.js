@@ -1,7 +1,7 @@
 const yesBtn = document.getElementById('yes-btn');
 const noBtn = document.getElementById('no-btn');
-const gifContainer = document.getElementById('gif-container');
-const kissGif = document.getElementById('kiss-gif');
+const imageContainer = document.getElementById('image-container');
+const specialImage = document.getElementById('special-image');
 const thankYouMessage = document.getElementById('thank-you-message');
 
 let clickCount = 0;
@@ -17,7 +17,7 @@ yesBtn.addEventListener('click', () => {
     yesBtn.style.display = 'none';
     noBtn.style.display = 'none';
 
-    // Display the "Thank You" message and GIF container
+    // Display the "Thank You" message and image container
     thankYouMessage.classList.add('visible');
-    gifContainer.classList.add('visible');
+    imageContainer.classList.add('visible');
 });
