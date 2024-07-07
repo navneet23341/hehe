@@ -5,12 +5,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #ffb3ff;
+    background-color: #FFA07A;
 }
 
 .proposal-container {
     text-align: center;
-    background-color: plum; /* Change container background color to pink */
+    background-color: lightgreen; /* Change container background color to pink */
     padding: 20px; /* Add padding for better appearance */
     border-radius: 10px; /* Add border radius for rounded corners */
 }
