@@ -10,9 +10,9 @@ body {
 
 .proposal-container {
     text-align: center;
-    background-color: plum;
-    padding: 20px;
-    border-radius: 10px;
+    background-color: plum; /* Change container background color to pink */
+    padding: 20px; /* Add padding for better appearance */
+    border-radius: 10px; /* Add border radius for rounded corners */
 }
 
 .options {
@@ -24,37 +24,32 @@ button {
     font-size: 16px;
     cursor: pointer;
     transition: transform 0.3s ease;
-    position: relative;
-    z-index: 1;
+    position: relative; /* Ensure relative positioning for button placement */
+    z-index: 1; /* Ensure buttons are clickable */
 }
 
 #yes-btn {
     background-color: #4caf50;
     color: white;
     border: none;
-    margin-right: 10px;
+    margin-right: 10px; /* Add right margin for spacing between buttons */
 }
 
 #no-btn {
     background-color: #f44336;
     color: white;
     border: none;
-    margin-left: 10px;
+    margin-left: 10px; /* Add left margin for spacing between buttons */
 }
 
 .hidden {
     display: none;
 }
 
+/* Center the "Thank You" message and GIF container */
 #thank-you-message.visible,
-#image-container.visible {
+#gif-container.visible {
     display: block;
     margin-top: 20px;
-    font-size: 28px;
-}
-
-#special-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
+    font-size: 28px; /* Increased font size for the "Thank You" message */
 }
