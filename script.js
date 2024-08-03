@@ -1,23 +1,21 @@
-const yesBtn = document.getElementById('yes-btn');
-const noBtn = document.getElementById('no-btn');
-const gifContainer = document.getElementById('gif-container');
-const kissGif = document.getElementById('kiss-gif');
-const thankYouMessage = document.getElementById('thank-you-message');
+const gifs = document.querySelectorAll('.gif-container > div');
+let currentIndex = 0;
 
-let clickCount = 0;
+function showGif(index) {
+    gifs.forEach((gif, i) => {
+        gif.classList.toggle('active', i === index);
+    });
+}
 
-noBtn.addEventListener('click', (event) => {
-    event.stopPropagation(); // Prevent the click event from propagating to the "Yes" button
-    clickCount++;
-    yesBtn.style.transform = `scale(${1 + clickCount * 0.5})`;
+document.getElementById('prev').addEventListener('click', () => {
+    currentIndex = (currentIndex > 0) ? currentIndex - 1 : gifs.length - 1;
+    showGif(currentIndex);
 });
 
-yesBtn.addEventListener('click', () => {
-    // Hide the buttons
-    yesBtn.style.display = 'none';
-    noBtn.style.display = 'none';
-
-    // Display the "Thank You" message and GIF container
-    thankYouMessage.classList.add('visible');
-    gifContainer.classList.add('visible');
+document.getElementById('next').addEventListener('click', () => {
+    currentIndex = (currentIndex < gifs.length - 1) ? currentIndex + 1 : 0;
+    showGif(currentIndex);
 });
+
+// Initially show the first GIF
+showGif(currentIndex);
