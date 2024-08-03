@@ -3,24 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>hehehe he</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>GIF Viewer</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .gif-container {
+            width: 80%;
+            max-width: 600px;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        .buttons button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .gif-container > div {
+            display: none;
+        }
+        .gif-container > div.active {
+            display: block;
+        }
+    </style>
 </head>
 <body>
-    <div class="proposal-container">
-        <h1>Would you like to be my friend??</h1>
-        <div class="options">
-            <button id="yes-btn">Yes</button>
-            <button id="no-btn">No</button>
-        </div>
-        <!-- Hidden GIF container -->
-        <div id="gif-container" class="hidden">
-            <iframe id="kiss-gif" src="https://tenor.com/embed/13257955"></iframe>
-        </div>
-        <!-- Hidden "Thank You" message -->
-        <div id="thank-you-message" class="hidden">Thank youu sm ✨🩵!</div>
-    </div>
 
-    <script src="script.js"></script>
+<div class="gif-container">
+    <div class="tenor-gif-embed" data-postid="18217279" data-share-method="host" data-aspect-ratio="0.75" data-width="100%"><a href="https://tenor.com/view/ghosa-cute-gif-18217279">Ghosa Cute GIF</a> from <a href="https://tenor.com/search/ghosa-gifs">Ghosa GIFs</a></div>
+    <div class="tenor-gif-embed" data-postid="5681729" data-share-method="host" data-aspect-ratio="1.10619" data-width="100%"><a href="https://tenor.com/view/loading-cute-pastel-pink-paw-prints-gif-5681729">Loading Cute GIF</a> from <a href="https://tenor.com/search/loading-gifs">Loading GIFs</a></div>
+    <div class="tenor-gif-embed" data-postid="8350439" data-share-method="host" data-aspect-ratio="1" data-width="100%"><a href="https://tenor.com/view/cat-gif-8350439">Cat GIF</a> from <a href="https://tenor.com/search/cat-gifs">Cat GIFs</a></div>
+    <div class="tenor-gif-embed" data-postid="9623862685095542968" data-share-method="host" data-aspect-ratio="1" data-width="100%"><a href="https://tenor.com/view/cute-girl-pink-lovely-okay-gif-9623862685095542968">Cute Girl Sticker</a> from <a href="https://tenor.com/search/cute-stickers">Cute Stickers</a></div>
+</div>
+
+<div class="buttons">
+    <button id="prev">Prev</button>
+    <button id="next">Next</button>
+</div>
+
+<script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+<script>
+    const gifs = document.querySelectorAll('.gif-container > div');
+    let currentIndex = 0;
+
+    function showGif(index) {
+        gifs.forEach((gif, i) => {
+            gif.classList.toggle('active', i === index);
+        });
+    }
+
+    document.getElementById('prev').addEventListener('click', () => {
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : gifs.length - 1;
+        showGif(currentIndex);
+    });
+
+    document.getElementById('next').addEventListener('click', () => {
+        currentIndex = (currentIndex < gifs.length - 1) ? currentIndex + 1 : 0;
+        showGif(currentIndex);
+    });
+
+    // Initially show the first GIF
+    showGif(currentIndex);
+</script>
+
 </body>
 </html>
+
