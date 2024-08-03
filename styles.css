@@ -5,7 +5,7 @@ body {
     justify-content: center;
     min-height: 100vh;
     margin: 0;
-    font-family: 'comic sans ms', cursive;
+    font-family: 'Pacifico';
     background-color: #F2D2BD;
 }
 
@@ -99,12 +99,12 @@ body {
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 18px;
+    font-size: 22px;
     background: rgba(0, 0, 0, 0.5);
     text-align: center;
     padding: 10px;
     box-sizing: border-box;
-    font-family: 'comic sans ms', cursive;
+    font-family: 'Pacifico';
 }
 
 .overlay-text p {
@@ -112,6 +112,6 @@ body {
 }
 @media (max-width: 767px) {
     .overlay-text {
-        font-family: 'Pacifico', cursive; /* Change font for mobile view */
+        font-family: 'Pacifico'; /* Change font for mobile view */
     }
 }
