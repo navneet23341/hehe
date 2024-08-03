@@ -5,7 +5,8 @@ body {
     justify-content: center;
     min-height: 100vh;
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: comic sans ms, cursive;
+    background-color: #F2D2BD;
 }
 
 .gif-container {
