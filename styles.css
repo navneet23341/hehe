@@ -5,7 +5,7 @@ body {
     justify-content: center;
     min-height: 100vh;
     margin: 0;
-    font-family: 'Pacifico';
+    font-family: 'Pacifico',cursive;
     background-color: #F2D2BD;
 }
 
@@ -104,7 +104,7 @@ body {
     text-align: center;
     padding: 10px;
     box-sizing: border-box;
-    font-family: 'Pacifico';
+    font-family: 'Pacifico', cursive;
 }
 
 .overlay-text p {
@@ -112,6 +112,6 @@ body {
 }
 @media (max-width: 767px) {
     .overlay-text {
-        font-family: 'Pacifico'; /* Change font for mobile view */
+        font-family: 'Pacifico',  cursive; /* Change font for mobile view */
     }
 }
