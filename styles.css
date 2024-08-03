@@ -5,7 +5,7 @@ body {
     justify-content: center;
     min-height: 100vh;
     margin: 0;
-    font-family: Pacifico, cursive;
+    font-family: 'comic sans ms', cursive;
     background-color: #F2D2BD;
 }
 
@@ -100,12 +100,18 @@ body {
     justify-content: center;
     color: white;
     font-size: 18px;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.5);
     text-align: center;
     padding: 10px;
     box-sizing: border-box;
+    font-family: 'comic sans ms', cursive;
 }
 
 .overlay-text p {
     margin: 5px 0;
+}
+@media (max-width: 767px) {
+    .overlay-text {
+        font-family: 'Pacifico', cursive; /* Change font for mobile view */
+    }
 }
