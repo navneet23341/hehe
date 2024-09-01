@@ -1,117 +1,165 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    margin: 0;
-    font-family: 'Pacifico',cursive;
-    background-color: #F2D2BD;
+  height: 100vh;
+  background: linear-gradient(45deg, #EB5F43 0%, #f3804f 100%);
+  background-size: 200% 200%;
+
+  display: grid;
+  place-items: center;
+
+  animation: gradient 10s ease infinite;
 }
 
-.gif-container {
-    width: 100%;
-    max-width: 600px;
-    display: flex;
-    justify-content: center;
-    position: relative;
+.hide {
+  display: none;
 }
 
-.buttons {
-    margin-top: 20px;
+main {
+  background: #FFFFFF;
+  box-shadow: 0px 2rem 5rem rgba(0, 0, 0, 0.8);
+  border-radius: .5rem;
+  
+  padding: 4.8rem 6.4rem;
+  margin-top: -8rem;
+
+  width: min(42.8rem, 90%);
+  text-align: center;
 }
 
-.buttons .button-56 {
-    align-items: center;
-    background-color: #fee6e3;
-    border: 2px solid #111;
-    border-radius: 8px;
-    box-sizing: border-box;
-    color: #111;
-    cursor: pointer;
-    display: flex;
-    font-family: Inter, sans-serif;
-    font-size: 16px;
-    height: 48px;
-    justify-content: center;
-    line-height: 24px;
-    max-width: 100%;
-    padding: 0 25px;
-    position: relative;
-    text-align: center;
-    text-decoration: none;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
+/*screen1*/
+
+h1, p, h2 {
+  color: #34355B;
 }
 
-.button-56:after {
-    background-color: #111;
-    border-radius: 8px;
-    content: "";
-    display: block;
-    height: 48px;
-    left: 0;
-    width: 100%;
-    position: absolute;
-    top: -2px;
-    transform: translate(8px, 8px);
-    transition: transform .2s ease-out;
-    z-index: -1;
+h1, h2 {
+  font-family: 'Montserrat';
+  font-weight: 700;
+  font-size: 2.4rem;
+  line-height: 2.9rem;
+
+  margin-bottom: 1.4rem;
 }
 
-.button-56:hover:after {
-    transform: translate(0, 0);
+.screen1 p {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 2rem;
+
+  margin-bottom: 2rem;
 }
 
-.button-56:active {
-    background-color: #ffdeda;
-    outline: 0;
+.screen1 img {
+  margin-bottom: 1.6rem;
+  cursor: pointer;
 }
 
-.button-56:hover {
-    outline: 0;
+.screen1 img:hover {
+  animation: shake .2s ease-in-out infinite;
 }
 
-@media (min-width: 768px) {
-    .button-56 {
-        padding: 0 40px;
-    }
+/*screen2*/
+
+.fortune {
+  background: #FBF6F2;
+  box-shadow: 2px 2px 2px rgba(85, 85, 85, 0.5);
+  padding: 1rem;
+
+  animation: appearing 1s .2s forwards;
+  opacity: 0;
+  transform: translateY(500px);
 }
 
-.gif-container > div {
-    display: none;
-    width: 100%;
+.fortune p {
+  font-family: 'Dancing Script', sans-serif;
+  font-weight: 400;
+  font-size: 2.4rem;
+  line-height: 2.9rem;
+  color: #000000;
+
+  margin-bottom: 1.6rem;
 }
 
-.gif-container > div.active {
-    display: block;
+button {
+  background: #EB5F43;
+  border-radius: 4px;
+  border: none;
+  padding: 1.6rem;
+
+  font-family: 'DM Sans';
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: #FFFFFF;
+
+  cursor: pointer;
+
+  transition: background .7s;
 }
 
-.overlay-text {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 28px;
-    background: rgba(0, 0, 0, 0.5);
-    text-align: center;
-    padding: 10px;
-    box-sizing: border-box;
-    font-family: 'Pacifico', cursive;
+button:hover {
+  background: #F38671;
 }
 
-.overlay-text p {
-    margin: 5px 0;
+.screen2 img {
+  margin-bottom: 1.7rem;
 }
-@media (max-width: 767px) {
-    .overlay-text {
-        font-family: 'Pacifico',  cursive; /* Change font for mobile view */
-    }
+
+@keyframes shake {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(5deg);
+  }
+
+  50% {
+    transform: rotate(0deg);
+  }
+
+  75% {
+    transform: rotate(-5deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes appearing {
+  0% {
+    transform: translateY(500px);
+    scale: 0;
+  }
+
+
+  100% {
+    opacity: 100;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
